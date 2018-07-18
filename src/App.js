@@ -1,38 +1,30 @@
-import React, { Component } from 'react';
-import ItemsList from './ItemsList';
-import ItemInput from './ItemInput';
-import './App.css';
+import React, { Component } from 'react' // eslint-disable-line no-unused-vars
+import ItemsList from './ItemsList' // eslint-disable-line no-unused-vars
+import ItemInput from './ItemInput' // eslint-disable-line no-unused-vars
+import './App.css'
 
 class App extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
-    this.state = {items: [], newItem: ''};
+    this.state = {items: []}
 
-    this.onAddItem = this.onAddItem.bind(this);
-    this.onItemChanged = this.onItemChanged.bind(this);
+    this.onAddItem = this.onAddItem.bind(this)
   }
 
-  onItemChanged(e) {
+  onAddItem () {
     this.setState({
-      newItem: e.target.value
-    });
+      items: [...this.state.items, this.state.newItem]
+    })
   }
 
-  onAddItem() {
-    this.setState({
-      items: [...this.state.items, this.state.newItem],
-      newItem: ''
-    });
-  }
-
-  render() {
+  render () {
     return (
       <div>
-        <ItemInput newItem={this.state.newItem} onAddItem={this.onAddItem} onItemChanged={this.onItemChanged}/>
+        <ItemInput onAddItem={this.onAddItem} />
         <ItemsList items={this.state.items}/>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
