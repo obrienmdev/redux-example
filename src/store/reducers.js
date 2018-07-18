@@ -11,8 +11,8 @@ export const rootReducer = (currentState = initialState, action) => {
   switch (action.type) {
     case actions.UPDATE_NEW_ITEM: {
       return {
-        newItem: action.payload,
-        items: currentState.items
+        ...currentState,
+        newItem: action.payload
       }
     }
     case actions.CREATE_ITEM: {
@@ -22,7 +22,7 @@ export const rootReducer = (currentState = initialState, action) => {
       }
     }
     default: {
-      // no nothing
+      // do nothing
     }
   }
   return currentState
