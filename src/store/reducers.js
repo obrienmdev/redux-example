@@ -1,7 +1,8 @@
 import * as actions from './actions'
 
 const initialState = {
-  newItem: ''
+  newItem: '',
+  items: []
 }
 
 // always one main reducer, usually called 'root'
@@ -10,12 +11,14 @@ export const rootReducer = (currentState = initialState, action) => {
   switch (action.type) {
     case actions.UPDATE_NEW_ITEM: {
       return {
-        newItem: action.payload
+        newItem: action.payload,
+        items: currentState.items
       }
     }
     case actions.CREATE_ITEM: {
       return {
-        newItem: ''
+        newItem: '',
+        items: [...currentState.items, currentState.newItem]
       }
     }
     default: {
