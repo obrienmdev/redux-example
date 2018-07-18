@@ -10,6 +10,7 @@ import { rootReducer } from './store/reducers'
 
 const store = createStore(
   rootReducer,
+  // enable https://github.com/zalmoxisus/redux-devtools-extension
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 
