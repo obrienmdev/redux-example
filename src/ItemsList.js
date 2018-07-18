@@ -1,5 +1,5 @@
-import React from 'react' // eslint-disable-line no-unused-vars
-import Item from './Item' // eslint-disable-line no-unused-vars
+import React from 'react'
+import Item from './Item'
 import { connect } from 'react-redux'
 
 const ItemsList = props => (

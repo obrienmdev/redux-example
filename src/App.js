@@ -1,6 +1,6 @@
-import React, { Component } from 'react' // eslint-disable-line no-unused-vars
-import ItemsList from './ItemsList' // eslint-disable-line no-unused-vars
-import ItemInput from './ItemInput' // eslint-disable-line no-unused-vars
+import React, { Component } from 'react'
+import ItemsList from './ItemsList'
+import ItemInput from './ItemInput'
 import './App.css'
 
 class App extends Component {
