@@ -13,6 +13,9 @@ export const rootReducer = (currentState = initialState, action) => {
         newItem: action.payload
       }
     }
+    default: {
+      // no nothing
+    }
   }
   return currentState
 }
