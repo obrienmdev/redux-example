@@ -2,6 +2,7 @@ import * as actions from './actions'
 
 const initialState = {
   newItem: '',
+  hoverItem: undefined,
   items: []
 }
 
@@ -20,6 +21,12 @@ export const rootReducer = (currentState = initialState, action) => {
         ...currentState,
         newItem: '',
         items: [...currentState.items, currentState.newItem]
+      }
+    }
+    case actions.HOVER_ITEM: {
+      return {
+        ...currentState,
+        hoverItem: action.payload
       }
     }
     default: {
