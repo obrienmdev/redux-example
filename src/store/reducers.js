@@ -17,13 +17,13 @@ export const rootReducer = (currentState = initialState, action) => {
     }
     case actions.CREATE_ITEM: {
       return {
+        ...currentState,
         newItem: '',
         items: [...currentState.items, currentState.newItem]
       }
     }
     default: {
-      // do nothing
+      return currentState
     }
   }
-  return currentState
 }
