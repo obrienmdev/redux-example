@@ -1,6 +1,6 @@
 import React from 'react' // eslint-disable-line no-unused-vars
 import { connect } from 'react-redux'
-import { updateNewItem } from './store/actions'
+import { updateNewItem, createItem } from './store/actions'
 
 const ItemInput = props => (
   <div>
@@ -19,7 +19,8 @@ const mapStateToProps = state => {
 // this function's output is too
 const mapDispatchToProps = dispatch => {
   return {
-    onItemChanged: ev => dispatch(updateNewItem(ev.target.value))
+    onItemChanged: ev => dispatch(updateNewItem(ev.target.value)),
+    onAddItem: () => dispatch(createItem())
   }
 }
 

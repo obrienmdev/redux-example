@@ -13,6 +13,11 @@ export const rootReducer = (currentState = initialState, action) => {
         newItem: action.payload
       }
     }
+    case actions.CREATE_ITEM: {
+      return {
+        newItem: ''
+      }
+    }
     default: {
       // no nothing
     }
